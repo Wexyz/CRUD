@@ -2,7 +2,7 @@
 Introductory application after learning PHP and SQL fundamentals <br/>
 Attempt at a many-to-many relationship database <br/>
 
-#SQL
+# SQL
 SQL database set up using XAMPP and PHPmyAdmin<br/>
 
 CREATE DATABASE portfoliocrud;
