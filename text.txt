@@ -1,0 +1,51 @@
+create table author(
+author_id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY,
+author_name varchar(128),
+PRIMARY KEY (author_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+create table title(
+title_id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY,
+title varchar(128)
+PRIMARY KEY (title_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table genre(
+genre_id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY,
+genre varchar(128)
+PRIMARY KEY (genre_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+create table author(
+	author_id INT AUTO_INCREMENT NOT NULL,
+    author varchar(128),
+    PRIMARY KEY (author_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table genre(
+	genre_id INT AUTO_INCREMENT NOT NULL,
+    genre varchar(128)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table title(
+	title_id INT AUTO_INCREMENT NOT NULL,
+  	title varchar(128),
+ 	author_id INT,
+	genre_id INT,
+    CONSTRAINT title_ibfk_1
+    	FOREIGN KEY (author_id)
+    	REFERENCES author (author_id)
+    	ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT title_ibfk_2
+    	FOREIGN KEY (genre_id)
+    	REFERENCES genre (genre_id)
+    	ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+alter table author(
+	
+	add CONSTRAINT author_ibfk_1
+	FOREIGN KEY
+);
